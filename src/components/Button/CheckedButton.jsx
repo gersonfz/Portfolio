@@ -8,7 +8,8 @@ const CheckedButton = () => {
         <div className={styles.checkedButton}>
             <h2>Descarga exitosa</h2>
             <ButtonIcon icon={AiOutlineCheck}/>
-        </div>)
+        </div>
+    )
 }
 
 export default CheckedButton

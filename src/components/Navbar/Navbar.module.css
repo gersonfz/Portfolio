@@ -14,6 +14,7 @@
   background-size: cover;
   width: 130px;
   height: 130px;
+  z-index: 1;
 }
 
 .navbar {
