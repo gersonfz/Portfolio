@@ -24,3 +24,9 @@
     text-overflow: ellipsis;
     padding: 0 1rem;
 }
+
+.container span{
+    position: absolute;
+    right: 50%;
+    bottom: 5%;
+}

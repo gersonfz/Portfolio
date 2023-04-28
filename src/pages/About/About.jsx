@@ -1,3 +1,4 @@
+import { DownButton } from '../../components'
 import styles from './About.module.css'
 
 const About = () => {
@@ -29,6 +30,7 @@ const About = () => {
             
           </span>
         </article>
+        <DownButton/>
       </section>
     </>
   )

@@ -87,72 +87,10 @@
     }
   }
 
-  .buttonDownload{
+  .sectionDownload{
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     bottom: 50px;
-  }
-.buttonDownload a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-family: 'Economica', sans-serif;
-    font-size: 1.25rem;
-    background-color: #1E63CB;
-    color: #fff;
-    border: #fff solid 2px;
-    text-decoration: none;
-  }
-  .buttonDownload svg {
-    margin-left: 1rem;
-  }
-  
-  .buttonDownload a:hover{
-    background-color: #080f1b;
-    color: #fff;
-    border: #1E63CB solid 2px;
-    transition: all 0.3s ease-in-out ;
-  }
-  .buttonDownload h2{
-    font-family: 'Economica', sans-serif;
-    font-size: 1.25rem;
-    color: #fff;
-    margin: 1rem 0;
-  }
-
-
-  .buttonDownload .checked{
-    cursor: auto;
-    width: fit-content;
-    border-radius: 50%;
-    background-color: #00FF00 !important;
-    animation: checkedAnimation 1s ease-in-out forwards;
-    animation-iteration-count: infinite;
-  }
-
-  .checked svg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    padding: 0.3rem 0;
-    font-size: 1.5rem;
-  }
-
-  @keyframes checkedAnimation {
-    0%{
-      transform: translateY(1px);
-    }
-    50%{
-      transform: translateY(-1px);
-    }
-    100%{
-      transform: translateY(1px);
-    }
   }

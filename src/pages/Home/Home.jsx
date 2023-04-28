@@ -5,7 +5,7 @@ import imgEclipse from '../../assets/img-eclipse.svg';
 import eclipseSola from '../../assets/eclipse-sola.svg';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import DownloadButton from '../../components/Button/DownloadButton';
+import { CheckedButton, DownloadButton } from '../../components';
 
 
 const Home = () => {
@@ -48,16 +48,11 @@ const Home = () => {
           <img src={imgEclipse} alt="Imagen generada por IA" />
           <img src={eclipseSola} alt="Eclipse compenetrando la imagen" />
         </div>
-        <div className={styles.buttonDownload} onClick={() => downloadFile(true)}>
+        <div className={styles.sectionDownload} onClick={() => downloadFile(true)}>
           {!download ?
-            <div>
-              <h2>Descarga exitosa</h2>
-              <span className={styles.checked}>
-                <AiOutlineCheck />
-              </span>
-            </div>
+            <DownloadButton />
             :
-            <DownloadButton/>
+            <CheckedButton />
           }
         </div>
       </section>
