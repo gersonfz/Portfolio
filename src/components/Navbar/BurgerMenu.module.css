@@ -1,0 +1,138 @@
+/* Configuracion del boton del Burger Menu */
+
+.menuButton,
+.menuButtonOpen{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.menuButtonBurger{
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(142, 148, 255, 0.2);
+    transition: all 0.75s ease-in-out;
+}
+.menuButtonBurgerColor{
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(142, 148, 255, 0.2);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+
+.menuButtonBurgerColor::before,
+.menuButtonBurgerColor::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    height: 2px;
+    background-color: #000;
+    box-shadow: 0 2px 5px rgba(142, 148, 255, 0.2);
+}
+
+.menuButtonBurger::before, 
+.menuButtonBurger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30px;
+    height: 2px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(142, 148, 255, 0.2);
+}
+
+.menuButtonBurger::before,.menuButtonBurgerColor::before{
+    transform: translateY(-10px);
+    animation: rotateInUpOut 0.75s ease-in-out forwards;
+
+}
+.menuButtonBurger::after, .menuButtonBurgerColor::after{
+    transform: translateY(10px);
+    animation: rotateInBottomOut 0.75s ease-in-out forwards;
+
+}
+
+.menuButtonOpen .menuButtonBurger  {
+    background: transparent;
+    box-shadow: none;
+    transition: all 1s ease-in-out;
+}
+.menuButtonOpen .menuButtonBurgerColor {
+    background: transparent;
+    box-shadow: none;
+    transition: all 0.25s ease-in-out;
+}
+
+.menuButtonOpen .menuButtonBurger::before{
+    animation: rotateInUp 0.75s ease-in-out forwards;
+}
+.menuButtonOpen .menuButtonBurger::after{
+    animation: rotateInBottom 0.75s ease-in-out forwards;
+}
+
+.menuButtonOpen .menuButtonBurgerColor::before{
+    background-color: #fff;
+    animation: rotateInUp 0.75s ease-in-out forwards;
+}
+.menuButtonOpen .menuButtonBurgerColor::after{
+    background-color: #fff;
+    animation: rotateInBottom 0.75s ease-in-out forwards;
+}
+
+@keyframes rotateInUp {
+    0% {
+        transform: rotate(0deg) translateY(1px, 1px);
+    }
+    50%{
+        transform: rotate(360deg) translate(1px, 1px);
+    }
+    100% {
+        transform: rotate(45deg) translate(1px, -1px);
+    }
+}
+@keyframes rotateInBottom {
+    0% {
+        transform: rotate(0deg) translateY(-1px, 1px);
+    }
+    100% {
+        transform: rotate(-45deg) translate(1px, 1px);
+    }
+}
+
+@keyframes rotateInUpOut {
+    0% {
+        transform: rotate(45deg) translate(1px, 1px);
+    }
+    50% {
+        transform: rotate(360deg) translate(1px, 1px);
+    }
+    100% {
+        transform: rotate(0deg) translateY(1px, 1px);
+    }
+}
+
+@keyframes rotateInBottomOut {
+    0%{
+        transform: rotate(-45deg) translate(1px, 1px);
+    }
+    100%{
+        transform: rotate(0deg) translateY(1px, 1px);
+    }
+}
