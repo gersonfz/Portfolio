@@ -62,3 +62,11 @@
     right: 50%;
     bottom: 5%;
 }
+
+/* Skills */
+
+.cardsSkills {
+    position: absolute;
+    right: 0;
+    top: 50px;
+}

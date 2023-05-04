@@ -1,4 +1,5 @@
-import { AboutSection, SkillsSection } from '../../components';
+import AboutSection from './AboutSection';
+import SkillsSection from './SkillsSection';
 import styles from './About.module.css'
 
 const About = () => {
