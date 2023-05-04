@@ -29,6 +29,8 @@ const SkillsSection = () => {
     ]
     return (
         <>
+
+        //Falta realizar estilos para poder generar una mejor experiencia de usuario a la hora de hacer click a la Card!
             <article className={styles.cardsSkills}>
                 <CardList cards={cards} />
             </article>
