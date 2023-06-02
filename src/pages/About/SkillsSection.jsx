@@ -2,6 +2,8 @@ import { HiOutlineArrowUp } from 'react-icons/hi';
 import { ButtonIcon, CardList } from '../../components';
 import scrollToSection from '../../utils/scrollTo';
 import styles from './About.module.css'
+import frontendImage from '../../assets/react-cards.jpg'
+import backendImage from '../../assets/backend.jpg'
 
 
 const SkillsSection = () => {
@@ -9,28 +11,22 @@ const SkillsSection = () => {
 
     const cards = [
         {
-            
-            image: 'https://placekitten.com/200/300',
-            title: 'Kitten',
-            content: 'This is a cute kitten.',
+            image: frontendImage,
+            title: 'Frontend Developer',
+            content: 'I enjoy creating clean and understandable code, utilizing current tools to always deliver the best solution.',
+            subtitle: 'Languaje I Speak: ',
+            subcontent: ['JS', 'HTML', 'CSS', 'Git', 'Sass', 'HBS', 'ReactJs']
         },
         {
-            
-            image: 'https://placekitten.com/201/301',
-            title: 'Another Kitten',
-            content: 'This is another cute kitten.',
-        },
-        {
-            
-            image: 'https://placekitten.com/202/302',
-            title: 'Third Kitten',
-            content: 'This is the third cute kitten.',
+            image: backendImage,
+            title: 'Backend Developer',
+            content: 'I love backend development—creating powerful, efficient systems with server-side technologies, databases, and APIs to drive website and app functionality.',
+            subtitle: 'Languaje I Speak: ',
+            subcontent: ['NodeJs', 'ExpressJs', 'Sockets', 'MongoDB', 'Firebase', 'MariaDB', 'MySQL']
         }
     ]
     return (
         <>
-
-        //Falta realizar estilos para poder generar una mejor experiencia de usuario a la hora de hacer click a la Card!
             <article className={styles.cardsSkills}>
                 <CardList cards={cards} />
             </article>
