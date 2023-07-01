@@ -66,6 +66,7 @@
 /* Skills */
 
 .cardsSkills {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    right: 100px;
+    top: 25px;
 }
