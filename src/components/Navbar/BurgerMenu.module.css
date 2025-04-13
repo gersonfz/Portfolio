@@ -2,7 +2,7 @@
 
 .menuButton,
 .menuButtonOpen{
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,6 +10,8 @@
     height: 50px;
     cursor: pointer;
     transition: all 1s ease-in-out;
+    top: 20px;
+    right: 20px;
 }
 
 .menuButtonBurger{

@@ -12,6 +12,8 @@ const CardList = ({ cards }) => {
                     content={card.content}
                     subtitle={card.subtitle}
                     subcontent={card.subcontent}
+                    skills={card.skills}
+                    date={card.date}
                 />
             ))}
         </div>
