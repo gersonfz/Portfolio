@@ -1,19 +1,21 @@
 import styles from './Home.module.css';
 import Typewriter from 'typewriter-effect';
-import { BsGithub, BsLinkedin, SiGmail, AiOutlineCheck } from 'react-icons/all';
+import { BsGithub, BsLinkedin, SiGmail } from 'react-icons/all';
 import imgEclipse from '../../assets/img-eclipse.svg';
 import eclipseSola from '../../assets/eclipse-sola.svg';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { CheckedButton, DownloadButton } from '../../components';
+import { DownloadButton } from '../../components';
+import { SpinnerDotted } from 'spinners-react';
+
 
 
 const Home = () => {
-  const [download, setDownload] = useState(false);
+  const [loading, setLoading] = useState(false);
   const downloadFile = (click) => {
-    setDownload(click)
+    setLoading(true);
     setTimeout(() => {
-      setDownload(false);
+      setLoading(false);
     }, 3000);
   }
   return (
@@ -49,15 +51,16 @@ const Home = () => {
           <img src={eclipseSola} alt="Eclipse compenetrando la imagen" />
         </div>
         <div className={styles.sectionDownload} onClick={() => downloadFile(true)}>
-          {!download ?
+          {loading ? (
+            <SpinnerDotted color="#1e63cb" />
+          ) : (
             <DownloadButton />
-            :
-            <CheckedButton />
-          }
+          )}
         </div>
       </section>
     </section>
   )
 }
+
 
 export default Home;

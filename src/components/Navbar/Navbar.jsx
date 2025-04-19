@@ -1,37 +1,28 @@
-import { NavLink, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import BurgerMenu from './BurgerMenu';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const [currentPathForBurger, setCurrentPathForBurger] = useState(window.location.pathname.slice(1));
-    const navigate = useNavigate();
     const location = useLocation();
     const navLinks = [
-        { name: 'Home', link: '/' },
-        { name: 'About', link: '/about' },
-        { name: 'Projects', link: '/projects' },
-        { name: 'Contact', link: '/contact' },
+        { name: 'Inicio', link: '/' },
+        { name: 'Acerca de', link: '/about' },
+        { name: 'Proyectos', link: '/projects' },
+        { name: 'Contacto', link: '/contact' },
     ];
+    const path = location.pathname.slice(1);
 
-    const handleLogoClick = () => {
-        setOpen(false);
-        navigate('/');
-        setCurrentPathForBurger(''); // Actualiza el path para el BurgerMenu
-    };
-
-    useEffect(() => {
-        setCurrentPathForBurger(location.pathname.slice(1));
-    }, [location.pathname]);
 
     return (
         <header className={styles.containerNavbar}>
             <NavLink
                 to="/"
-                className={`${styles.logo} ${({ isActive }) => isActive ? styles.active : ''}`}
-                onClick={handleLogoClick}
-            />
+                className={styles.logo}
+                onClick={() => setOpen(false)} // Cierra el menú al hacer clic en el logo (si está abierto)
+            >
+            </NavLink>
             <nav className={!open ? styles.navbar : `${styles.navbar} ${styles.open}`}>
                 <ul>
                     {navLinks.map(list => (
@@ -48,7 +39,7 @@ const Navbar = () => {
                 </ul>
             </nav>
             <div className={styles.burgerMenu} onClick={() => setOpen(!open)}>
-                <BurgerMenu open={open} setOpen={setOpen} path={currentPathForBurger} />
+                <BurgerMenu open={open} setOpen={setOpen} path={path} />
             </div>
         </header>
     );
