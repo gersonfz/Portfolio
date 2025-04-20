@@ -4,7 +4,7 @@ const BurgerMenu = ({ open, setOpen, path }) => {
   const isDefaultPath = path === '';
   const isProjectsPath = path === 'projects';
   const isPathColor = isDefaultPath || isProjectsPath;
-  console.log(path);
+  console.log(`open: ${open}, setOpen: ${setOpen}, path: ${path}`);
 
   const menuButtonClassName = open ? styles.menuButtonOpen : styles.menuButton;
   const menuButtonBurgerClassName = isPathColor ? styles.menuButtonBurger : styles.menuButtonBurgerColor ;

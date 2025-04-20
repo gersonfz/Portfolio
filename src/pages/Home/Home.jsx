@@ -1,10 +1,9 @@
 import styles from './Home.module.css';
 import Typewriter from 'typewriter-effect';
-import { BsGithub, BsLinkedin, SiGmail } from 'react-icons/all';
+import { FaGithub, FaLinkedin, FaWhatsapp } from 'react-icons/all';
 import imgEclipse from '../../assets/img-eclipse.svg';
 import eclipseSola from '../../assets/eclipse-sola.svg';
 import { useState } from 'react';
-import { NavLink } from 'react-router-dom';
 import { DownloadButton } from '../../components';
 import { SpinnerDotted } from 'spinners-react';
 
@@ -12,11 +11,11 @@ import { SpinnerDotted } from 'spinners-react';
 
 const Home = () => {
   const [loading, setLoading] = useState(false);
-  const downloadFile = (click) => {
+  const downloadFile = () => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 2500);
   }
   return (
     <section className={styles.container}>
@@ -34,15 +33,15 @@ const Home = () => {
           />
         </div>
         <div className={styles.contactIcons}>
-          <a href='https://github.com/gersonfz?tab=repositories' target='_blank' rel="noopener noreferrer">
-            <BsGithub />
+          <a href='https://github.com/gersonfz' target='_blank' rel="noopener noreferrer">
+            <FaGithub />
           </a>
           <a href='https://www.linkedin.com/in/gerson-fernandez-espinoza17/' target='_blank' rel='noopener noreferrer'>
-            <BsLinkedin />
+            <FaLinkedin />
           </a>
-          <NavLink to='/contact'>
-            <SiGmail />
-          </NavLink>
+          <a href="https://wa.me/+584241641926" target="_blank" rel="noopener noreferrer">
+            <FaWhatsapp />
+          </a>
         </div>
       </section>
       <section className={styles.secondSection}>
